@@ -2,8 +2,6 @@
 let total = [];
 
 function listAllUsers() {
-    // function Add New User
-    let isActiveAdd = false;
     addArea()
     // refresh data from Local Storage
     const arrUsers = localStorage.getItem('keyUser')
@@ -79,17 +77,11 @@ function listAllUsers() {
                 const item = total[itemIndex];
                 const listInfo = [
                     { 'First name and Last name': `${item.firstName} ${item.lastName}` },
-                    { 'Age': `${item.age} years` },
+                    { 'Age': `${item.age} y.o.` },
                     { 'E-mail': item.email },
                     { 'Phone number': item.phone },
                     { 'Card number': item.card }
                 ];
-                const container = document.getElementById('containerInfo')
-
-                if (container) {
-                    console.log(container)
-                    container.innerHTML = '';
-                }
                 document.getElementById('container').append(tableCreate(listInfo, 'containerInfo'))
             })
             butView.addEventListener('mouseout', function () {

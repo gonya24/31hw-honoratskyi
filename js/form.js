@@ -45,38 +45,37 @@ function addArea() {
 }
 // Button in edit form
 function cancelForm(forms) {
-    const cancel = forms.cancel
-    cancel.classList.add('cancel')
-    cancel.addEventListener('click', function () {
-        forms.remove()
-    })
+    forms.cancel.classList.add('cancel');
+    forms.cancel.addEventListener('click', function () {
+        forms.remove();
+    });
 }
 // func for edit data in List
 function editBtn(item, forms) {
-    forms.firstName.value = item.firstName
-    forms.lastName.value = item.lastName
-    forms.age.value = item.age
-    forms.email.value = item.email
-    forms.phone.value = item.phone
-    forms.card.value = item.card
-    forms.pass.value = item.pass
-    const saveEdit = document.getElementById('save')
-    saveEdit.classList.add('save')
+    forms.firstName.value = item.firstName;
+    forms.lastName.value = item.lastName;
+    forms.age.value = item.age;
+    forms.email.value = item.email;
+    forms.phone.value = item.phone;
+    forms.card.value = item.card;
+    forms.pass.value = item.pass;
+    const saveEdit = document.getElementById('save');
+    saveEdit.classList.add('save');
     saveEdit.addEventListener('click', function () {
         if (saveError()) { }
         else {
-            item.firstName = forms.firstName.value
-            item.lastName = forms.lastName.value
-            item.age = forms.age.value
-            item.email = forms.email.value
-            item.phone = forms.phone.value,
-                item.card = forms.card.value,
-                item.pass = forms.pass.value
-            localStorage.setItem('keyUser', JSON.stringify(total))
-            listAllUsers()
+            item.firstName = forms.firstName.value;
+            item.lastName = forms.lastName.value;
+            item.age = forms.age.value;
+            item.email = forms.email.value;
+            item.phone = forms.phone.value;
+            item.card = forms.card.value;
+            item.pass = forms.pass.value;
+            localStorage.setItem('keyUser', JSON.stringify(total));
+            listAllUsers();
         }
 
-    })
+    });
 }
 // func for create form`s element
 function createElement(parent, arr) {
